@@ -6,3 +6,4 @@ function ImprimirNombreEnMayusculas(n) {
 }
 
 ImprimirNombreEnMayusculas(nombre)
+ // se hablo de variables globales o scope locales y globales 

@@ -22,10 +22,10 @@ function objetoPersona ({nombre,apellidoP,apellidoM,edad})
 
     if (edad >= 18) {
     
-        document.write(`HOLA, TE LLAMAS ${nombre} ${apellidoP} ${apellidoM} Y TIENES ${edad} AÑOS Y ERES MAYOR DE EDAD`)
+        document.write(`HOLA, TE LLAMAS ${nombre} ${apellidoP} ${apellidoM}, TIENES ${edad} AÑOS Y ERES MAYOR DE EDAD`)
     } 
     else
-    document.write(`HOLA, TE LLAMAS ${nombre} ${apellidoP} ${apellidoM} Y TIENES ${edad} AÑOS Y NO ERES MAYOR DE EDAD`)
+    document.write(`HOLA, TE LLAMAS ${nombre} ${apellidoP} ${apellidoM}, TIENES ${edad} AÑOS Y NO ERES MAYOR DE EDAD`)
     
     
     

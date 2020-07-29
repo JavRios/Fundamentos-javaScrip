@@ -1,3 +1,11 @@
+function heredaDe (prototipoHijo, PrototipoPadre){
+
+    var fn = function(){}
+    fn.prototype = PrototipoPadre.prototype
+    prototipoHijo.prototype = new fn
+    prototipoHijo.prototype.constructor = prototipoHijo
+}
+
 function Persona (nombreProto, apellidoProto, alturaProto) {
 
     this.nombreObj = nombreProto //atributo nombre
@@ -13,9 +21,23 @@ Persona.prototype.saludar = function () {
 
 Persona.prototype.soyAlto = function() {
 
-    this.alturaObj > 1.8
+   return  this.alturaObj > 1.8
 }
 
-var javier = new Persona('Javier','Rios', 1.75) // la palabra new es una palabra reservada que se usa para crear nuevos objetos dado un prototipo como la funcion de arriba // la palabra persona es el nombre la fucnion prototipo
-var erika = new Persona ('Erika' ,'Luna',1.65)
-var arturo = new Persona ('Arturo', 'Martinez',1.85)
+function Desarrollador (nombreDesa, apellidoDesa) {
+
+        this.nombre2 = nombreDesa
+        this.apellido2 = apellidoDesa
+}
+
+heredaDe(Desarrollador,Persona)
+
+Desarrollador.prototype.saludar = function () {
+    
+    console.log(`Hola, me llamo ${this.nombre2} ${this.apellido2} y soy desarrollador/a`)  
+}
+
+
+//var javier = new Persona('Javier','Rios', 1.75) // la palabra new es una palabra reservada que se usa para crear nuevos objetos dado un prototipo como la funcion de arriba // la palabra persona es el nombre la fucnion prototipo
+//var erika = new Persona ('Erika' ,'Luna',1.65)
+//var arturo = new Persona ('Arturo', 'Martinez',1.85)

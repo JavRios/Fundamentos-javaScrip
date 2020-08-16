@@ -108,6 +108,7 @@
         }
 
         inicializar() {
+          this.elegirColor = this.elegirColor.bind(this)
           btnEmpezar.classList.add('hide') //oculta el boton inicio
           this.nivel = 1
           this.colores = {
@@ -122,9 +123,12 @@
         {
           this.secuencia = new Array (10).fill(0).map(n => Math.floor (Math.random()*4))
         }
+//clase 44
 
         siguienteNivel(){
           this.iluminarSecuencia ()
+          this.agregarEventosClick()
+
         }
         
         transformarNumeroAColor (numero){
@@ -158,6 +162,19 @@
         apagarColor (color){
           this.colores[color].classList.remove('light')
         }
+
+        agregarEventosClick(){
+
+          this.colores.celeste.addEventListener('click',this.elegirColor)
+          this.colores.verde.addEventListener('click',this.elegirColor)
+          this.colores.violeta.addEventListener('click',this.elegirColor)
+          this.colores.naranja.addEventListener('click',this.elegirColor)
+        }
+
+        elegirColor (ev){
+          console.log(this) 
+
+        } 
       }
 
 
